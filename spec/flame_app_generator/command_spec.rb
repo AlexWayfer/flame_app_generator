@@ -243,7 +243,7 @@ describe FlameAppGenerator::Command do
 									'<%#= text %>',
 									"href=\"<%= path_to #{short_module_name}::Site::IndexController %>\"",
 									'><%= config[:site][:site_name] %></a>,',
-									"#{Date.today.year}"
+									Date.today.year.to_s
 								]
 							end
 
