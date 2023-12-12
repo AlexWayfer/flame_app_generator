@@ -18,7 +18,7 @@ module FlameAppGenerator
 				alias app_name name
 
 				def initialize(name, project_name, domain, indentation)
-					super name, indentation
+					super(name, indentation)
 
 					@module_name = project_name || app_name.camelize
 
