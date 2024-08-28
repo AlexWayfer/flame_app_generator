@@ -42,5 +42,5 @@ Gem::Specification.new do |spec|
 	spec.executables.concat.push 'flame_app_generator'
 
 	spec.add_dependency 'gorilla_patch', '~> 5.0'
-	spec.add_dependency 'project_generator', '~> 0.3.0'
+	spec.add_dependency 'project_generator', '~> 0.4.0'
 end
