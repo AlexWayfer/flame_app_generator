@@ -552,6 +552,44 @@ describe FlameAppGenerator::Command do
 								it { is_expected.to eq expected_permissions }
 							end
 						end
+
+						describe 'cleaning directories' do
+							describe 'mailers/' do
+								subject(:file_existance) do
+									File.exist? File.join(Dir.pwd, app_name, 'mailers')
+								end
+
+								before do
+									run ## parent subject with generation
+								end
+
+								it { is_expected.to be true }
+							end
+
+							describe 'mailers/.keep' do
+								subject(:file_existance) do
+									File.exist? File.join(Dir.pwd, app_name, 'mailers/.keep')
+								end
+
+								before do
+									run ## parent subject with generation
+								end
+
+								it { is_expected.to be false }
+							end
+
+							describe 'template/mailers/.keep' do
+								subject(:file_existance) do
+									File.exist? File.join(Dir.pwd, 'spec/support/example_template', 'mailers/.keep')
+								end
+
+								before do
+									run ## parent subject with generation
+								end
+
+								it { is_expected.to be true }
+							end
+						end
 					end
 
 					shared_examples 'correct behavior with all data' do

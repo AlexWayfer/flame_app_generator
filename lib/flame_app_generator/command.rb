@@ -42,7 +42,9 @@ module FlameAppGenerator
 		def clean_dirs
 			puts 'Clean directories...'
 
-			FileUtils.rm Dir.glob('**/.keep', File::FNM_DOTMATCH)
+			Dir.chdir name do
+				FileUtils.rm Dir.glob('**/.keep', File::FNM_DOTMATCH)
+			end
 		end
 
 		def setup_project
