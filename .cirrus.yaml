@@ -85,6 +85,17 @@ rspec_task:
 
   test_script: bundle exec rspec
 
+  test_reporter_cache:
+    folder: test_reporter
+    fingerprint_script:
+      - curl --no-progress-meter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64.sha256
+    populate_script:
+      - mkdir -p test_reporter
+      - curl https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o test_reporter/test-reporter-latest
+      - chmod +x test_reporter/test-reporter-latest
+
+  test_report_script: test_reporter/test-reporter-latest
+
   only_if: ($CIRRUS_BRANCH == 'main') ||
     changesInclude(
       '.cirrus.yaml', '.gitignore', 'Gemfile', '.rspec', '*.gemspec', 'lib/**', 'spec/**'
