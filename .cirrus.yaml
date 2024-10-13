@@ -85,16 +85,16 @@ rspec_task:
 
   test_script: bundle exec rspec
 
-  test_reporter_cache:
-    folder: test_reporter
+  cc_test_reporter_cache:
+    folder: cc_test_reporter
     fingerprint_script:
       - curl -L --no-progress-meter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64.sha256
     populate_script:
-      - mkdir -p test_reporter
-      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o test_reporter/test-reporter-latest
-      - chmod +x test_reporter/test-reporter-latest
+      - mkdir -p cc_test_reporter
+      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o cc_test_reporter/test-reporter-latest
+      - chmod +x cc_test_reporter/test-reporter-latest
 
-  test_report_script: test_reporter/test-reporter-latest after-build
+  cc_test_report_script: cc_test_reporter/test-reporter-latest after-build
 
   only_if: ($CIRRUS_BRANCH == 'main') ||
     changesInclude(
