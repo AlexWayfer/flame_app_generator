@@ -80,6 +80,9 @@ rspec_task:
 
   <<: *bundle_cache
 
+  env:
+    CC_TEST_REPORTER_ID: ENCRYPTED[60c03c392fe11ffc6a5d1f396c2e46fe25f0c33c00aaa6b4b85d8df2984f2f2aed7a675beb5aca812c351040d5fd3345]
+
   test_script: bundle exec rspec
 
   only_if: ($CIRRUS_BRANCH == 'main') ||

@@ -1,6 +1,7 @@
 # Flame App Generator
 
 [![Cirrus CI - Base Branch Build Status](https://img.shields.io/cirrus/github/AlexWayfer/flame_app_generator?style=flat-square)](https://cirrus-ci.com/github/AlexWayfer/flame_app_generator)
+[![Code Coverage](https://img.shields.io/codeclimate/coverage/AlexWayfer/flame_app_generator?style=flat-square)](https://codeclimate.com/github/AlexWayfer/flame_app_generator/code)
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/AlexWayfer/flame_app_generator.svg?style=flat-square)](https://codeclimate.com/github/AlexWayfer/flame_app_generator)
 [![Depfu](https://img.shields.io/depfu/AlexWayfer/flame_app_generator?style=flat-square)](https://depfu.com/repos/github/AlexWayfer/flame_app_generator)
 [![license](https://img.shields.io/github/license/AlexWayfer/flame_app_generator.svg?style=flat-square)](LICENSE.txt)
