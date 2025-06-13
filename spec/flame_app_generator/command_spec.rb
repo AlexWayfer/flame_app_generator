@@ -462,13 +462,13 @@ describe FlameAppGenerator::Command do
 								run
 							end
 
-							include_examples 'correct system calls with all data'
+							it_behaves_like 'correct system calls with all data'
 						end
 
 						describe 'files' do
 							include_context 'with supressing regular output'
 
-							include_examples 'correct files with all data'
+							it_behaves_like 'correct files with all data'
 						end
 					end
 
@@ -480,7 +480,7 @@ describe FlameAppGenerator::Command do
 							let(:domain_name) { 'foobar.com' }
 							let(:email_from_name) { 'FooBar.com' }
 
-							include_examples 'correct behavior with all data'
+							it_behaves_like 'correct behavior with all data'
 						end
 
 						context 'with domain option' do
@@ -491,7 +491,7 @@ describe FlameAppGenerator::Command do
 								[*super(), "--domain=#{domain_name}"]
 							end
 
-							include_examples 'correct behavior with all data'
+							it_behaves_like 'correct behavior with all data'
 						end
 					end
 
@@ -509,7 +509,7 @@ describe FlameAppGenerator::Command do
 							let(:domain_name) { 'foobar.com' }
 							let(:email_from_name) { 'FooBaR.com' }
 
-							include_examples 'correct behavior with all data'
+							it_behaves_like 'correct behavior with all data'
 						end
 
 						context 'with domain option' do
@@ -520,7 +520,7 @@ describe FlameAppGenerator::Command do
 								[*super(), "--domain=#{domain_name}"]
 							end
 
-							include_examples 'correct behavior with all data'
+							it_behaves_like 'correct behavior with all data'
 						end
 					end
 				end
@@ -529,11 +529,11 @@ describe FlameAppGenerator::Command do
 					let(:template) { "#{__dir__}/../support/example_template" }
 
 					shared_examples 'correct system calls with all data' do
-						include_examples 'common correct system calls with all data'
+						it_behaves_like 'common correct system calls with all data'
 					end
 
 					shared_examples 'correct files with all data' do
-						include_examples 'common correct files with all data'
+						it_behaves_like 'common correct files with all data'
 
 						describe 'exe/setup.sh' do
 							describe 'permissions' do
@@ -593,10 +593,10 @@ describe FlameAppGenerator::Command do
 					end
 
 					shared_examples 'correct behavior with all data' do
-						include_examples 'common correct behavior with all data'
+						it_behaves_like 'common correct behavior with all data'
 					end
 
-					include_examples 'correct behavior with template'
+					it_behaves_like 'correct behavior with template'
 				end
 
 				context 'with `--git` option (for template)' do
@@ -621,18 +621,18 @@ describe FlameAppGenerator::Command do
 					end
 
 					shared_examples 'correct system calls with all data' do
-						include_examples 'common correct system calls with all data'
+						it_behaves_like 'common correct system calls with all data'
 					end
 
 					shared_examples 'correct files with all data' do
-						include_examples 'common correct files with all data'
+						it_behaves_like 'common correct files with all data'
 					end
 
 					shared_examples 'correct behavior with all data' do
-						include_examples 'common correct behavior with all data'
+						it_behaves_like 'common correct behavior with all data'
 					end
 
-					include_examples 'correct behavior with template'
+					it_behaves_like 'correct behavior with template'
 				end
 			end
 		end
