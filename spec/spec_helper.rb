@@ -4,6 +4,11 @@ require 'pry-byebug'
 
 require 'simplecov'
 
+if ENV['CI']
+	require 'coveralls'
+	SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+end
+
 SimpleCov.start
 
 RSpec::Matchers.define :include_lines do |expected_lines|

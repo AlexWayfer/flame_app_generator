@@ -83,20 +83,9 @@ rspec_task:
   <<: *bundle_cache
 
   env:
-    CC_TEST_REPORTER_ID: ENCRYPTED[60c03c392fe11ffc6a5d1f396c2e46fe25f0c33c00aaa6b4b85d8df2984f2f2aed7a675beb5aca812c351040d5fd3345]
+    COVERALLS_REPO_TOKEN: ENCRYPTED[11638d491d2287303c09468d21a01e85d41919576735a83e36a2f51a7086371564dec6489b92d79b4b1392d80798358e]
 
   test_script: bundle exec rspec
-
-  cc_test_reporter_cache:
-    folder: cc_test_reporter
-    fingerprint_script:
-      - curl -L --no-progress-meter https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64.sha256
-    populate_script:
-      - mkdir -p cc_test_reporter
-      - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 -o cc_test_reporter/test-reporter-latest
-      - chmod +x cc_test_reporter/test-reporter-latest
-
-  cc_test_report_script: cc_test_reporter/test-reporter-latest after-build
 
   only_if: ($CIRRUS_BRANCH == 'main') ||
     changesInclude(
