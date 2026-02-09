@@ -600,9 +600,7 @@ describe FlameAppGenerator::Command do
 				end
 
 				context 'with `--git` option (for template)' do
-					template = 'AlexWayfer/flame_app_template'
-
-					let(:template) { template }
+					let(:template) { 'AlexWayfer/flame_app_template' }
 					let(:args) { [*super(), '--git'] }
 
 					before do
