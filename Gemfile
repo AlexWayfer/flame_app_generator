@@ -22,7 +22,7 @@ group :test do
 
 	gem 'simplecov', '~> 0.22.0'
 
-	gem 'coveralls_reborn', '~> 0.29.0', require: false
+	gem 'coveralls_reborn', '~> 1.0.0', require: false
 end
 
 group :lint do
