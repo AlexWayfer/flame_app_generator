@@ -49,7 +49,7 @@ jobs:
 
   remark:
     needs: changes
-    if: github.ref == 'refs/heads/main' || needs.changes.outputs.remark == 'true'
+    if: github.ref_name == 'main' || needs.changes.outputs.remark == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
 
   bundle-audit:
     needs: changes
-    if: github.ref == 'refs/heads/main' || needs.changes.outputs.bundle-audit == 'true'
+    if: github.ref_name == 'main' || needs.changes.outputs.bundle-audit == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -74,7 +74,7 @@ jobs:
 
   rubocop:
     needs: changes
-    if: github.ref == 'refs/heads/main' || needs.changes.outputs.rubocop == 'true'
+    if: github.ref_name == 'main' || needs.changes.outputs.rubocop == 'true'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -86,7 +86,7 @@ jobs:
 
   rspec:
     needs: changes
-    if: github.ref == 'refs/heads/main' || needs.changes.outputs.rspec == 'true'
+    if: github.ref_name == 'main' || needs.changes.outputs.rspec == 'true'
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
