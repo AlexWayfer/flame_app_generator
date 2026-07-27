@@ -56,7 +56,6 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: latest
-          cache: npm
       - run: npm install
       - run: npm run remark
 
