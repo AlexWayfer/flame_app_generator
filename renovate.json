@@ -21,9 +21,12 @@
 			"groupName": "RuboCop packages"
 		},
 		{
-			"matchPackageNames": ["simplecov*"],
+			"matchPackageNames": [
+				"simplecov*",
+				"coveralls*"
+			],
 			"matchDatasources": ["rubygems"],
-			"groupName": "SimpleCov packages"
+			"groupName": "Coverage packages"
 		},
 		{
 			"matchPackageNames": [

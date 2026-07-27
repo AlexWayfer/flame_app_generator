@@ -18,10 +18,12 @@ updates:
         patterns:
           - 'rubocop'
           - 'rubocop-*'
-      simplecov:
+      coverage:
         patterns:
           - 'simplecov'
           - 'simplecov-*'
+          - 'coveralls'
+          - 'coveralls_*'
 
   - package-ecosystem: npm
     directory: /
