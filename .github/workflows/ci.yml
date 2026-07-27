@@ -2,7 +2,8 @@ name: CI
 
 on:
   push:
-    branches: [main]
+    branches:
+      - main
   pull_request:
 
 env:
@@ -98,7 +99,11 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        ruby: ['3.2', '3.3', '3.4', '4.0']
+        ruby:
+          - '3.2'
+          - '3.3'
+          - '3.4'
+          - '4.0'
     steps:
       - uses: actions/checkout@v4
       - uses: ruby/setup-ruby@v1
