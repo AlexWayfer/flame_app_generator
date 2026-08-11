@@ -20,7 +20,7 @@ group :test do
 
 	gem 'rspec', '~> 3.9'
 
-	gem 'simplecov', '~> 1.0.0'
+	gem 'simplecov', '~> 1.1.0'
 
 	gem 'coveralls_reborn', '~> 1.0.0', require: false
 end
